@@ -18,7 +18,7 @@ struct ContentView: View {
                 CardView(isActive: self.$isActive)
                 Divider()
                 Spacer()
-                Button(action: {isActive = true}) {
+                Button(action: {isActive = !isActive}) {
                     Text("Lovely Button")
                         .foregroundColor(Color.orange)
                 }
@@ -44,7 +44,7 @@ struct CardView: View {
             Text("I will quickscope your mom with my CoD")
         }
         .padding(.all, 15.0)
-        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
+        .background(isActive ? Color.white : Color.orange)
         .cornerRadius(/*@START_MENU_TOKEN@*/15.0/*@END_MENU_TOKEN@*/)
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         
